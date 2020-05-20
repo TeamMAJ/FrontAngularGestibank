@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col">
+    <section>
+      <form novalidate [formGroup]="agentForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+          <div class="form-group">
+            <label>Nom</label>
+            <input type="text" class="form-control" formControlName="nom">
+          </div>
+          <div class="form-group">
+            <label>Prenom</label>
+            <input type="text" class="form-control" formControlName="prenom">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" formControlName="email">
+          </div>
+          <div class="form-group">
+            <label>Adresse</label>
+            <input type="text" class="form-control" formControlName="addresse">
+          </div>
+          <div class="form-group">
+            <label>Telephone</label>
+            <input type="text" class="form-control" formControlName="telephone">
+          </div>
+          <div class="form-group">
+            <label>Pseudo</label>
+            <input type="text" class="form-control" formControlName="pseudo">
+          </div>
+          <div class="form-group">
+            <label>MDP</label>
+            <input type="text" class="form-control" formControlName="mdp">
+          </div>
+          <div class="form-group">
+            <label>matricule</label>
+            <input type="text" class="form-control" formControlName="matricule">
+          </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary" [disabled]="!agentForm.valid">Enregistrer</button>
+      </form>
+    </section>
+  </div>
+</div>

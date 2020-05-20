@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Agent } from './../../models/agent';
 import { Component, OnInit } from '@angular/core';
 import { AgentService } from 'src/app/services/agent.service';
@@ -9,7 +10,8 @@ import { AgentService } from 'src/app/services/agent.service';
 })
 export class ListeAgentsComponent implements OnInit {
   agents: Agent[];
-  constructor(private agentService: AgentService) { }
+  constructor(private agentService: AgentService,
+              private router: Router) { }
 
   ngOnInit() {
     this.getAllAgents();
@@ -17,6 +19,10 @@ export class ListeAgentsComponent implements OnInit {
 
   getAllAgents() {
     this.agents = this.agentService.findAll();
+  }
+
+  redirectNewAgentPage() {
+    this.router.navigate(['/admin/detail-agent']);
   }
 
 }

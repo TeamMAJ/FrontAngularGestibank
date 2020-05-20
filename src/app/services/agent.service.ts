@@ -13,4 +13,11 @@ export class AgentService {
     return AGENTS;
   }
 
+  saveAgent(agent: Agent) {
+    if (agent.idagent == null) {
+      agent.idagent = AGENTS.length + 1;
+      AGENTS.push(agent);
+    }
+  }
+
 }

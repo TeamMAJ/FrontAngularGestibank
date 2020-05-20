@@ -6,4 +6,11 @@ export class Agent {
   matricule: string;
   utilisateur: Utilisateur = new Utilisateur();
   admin: Admin = new Admin();
+
+  constructor(idagent: number, matricule: string, utilisateur: Utilisateur, admin: Admin) {
+    this.idagent = idagent;
+    this.matricule = matricule;
+    this.utilisateur = utilisateur;
+    this.admin = admin;
+  }
 }
