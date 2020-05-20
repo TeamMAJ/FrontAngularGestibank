@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DemandeOuverture } from 'src/app/models/demande-ouverture';
 import { DemandeService } from 'src/app/services/demande.service';
 import { Router } from '@angular/router';
+import { AgentService } from 'src/app/services/agent.service';
+import { Agent } from 'src/app/models/agent';
 
 @Component({
   selector: 'app-liste-demandes',
@@ -11,11 +13,14 @@ import { Router } from '@angular/router';
 
 export class ListeDemandesComponent implements OnInit {
   demandes: DemandeOuverture[];
+  agents: Agent[];
   constructor(private demandeService: DemandeService,
+    private agentService: AgentService,
     private router: Router) { }
 
   ngOnInit() {
     this.getAllDemandes();
+    this.getAllAgent();
   }
 
   /**
@@ -25,13 +30,13 @@ export class ListeDemandesComponent implements OnInit {
     this.demandes = this.demandeService.findAll();
   }
 
-  redirectNewDemandePage() {
-    this.router.navigate(['/admin/liste-demandes']);
+  getAllAgent() {
+    this.agents = this.agentService.findAll();
   }
 
-  validationDemande(demandeOuverture: DemandeOuverture) {
-    if (demandeOuverture) {
-      this.router.navigate(['/demande/updateDemande/:id'])
-    }
-  }
+  /* validationDemande(demandeOuverture: DemandeOuverture) {
+     if (demandeOuverture) {
+       this.router.navigate(['/demande/updateDemande/:id'])
+     }
+   }*/
 }

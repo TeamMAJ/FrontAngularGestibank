@@ -18,6 +18,7 @@
             <th>Email client</th>
             <th>date de la demande</th>
             <th>réponse</th>
+            <th>choix du l'agent</th>
           </tr>
         </thead>
         <tbody>
@@ -28,9 +29,16 @@
             <td>{{demande.clientpotentiel.email}}</td>
             <td>{{demande.dateDemande}}</td>
             <td>{{demande.valide}}</td>
-            <button type="button" class="btn btn-success"
-              (click)="validationDemande(demande.iddemandeOuverture)">Valider</button>
-            <button type="button" class="btn btn-danger">Refuser</button>
+            <td>
+              <form>
+                <select name="agent">
+                  <option value="">Agent</option>
+                  <option *ngFor="let agent of agents"> {{agent.matricule}} {{agent.utilisateur.nom}}
+                  </option>
+                </select>
+              </form>
+            </td>
+            <button type="button" class="btn btn-success" (click)="transmettredemande(demande)">transmettre</button>
             <!-- suppression de la demande ou juste refus-->
           </tr>
         </tbody>
