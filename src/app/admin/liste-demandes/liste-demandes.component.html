@@ -1,1 +1,40 @@
 <p>liste-demandes works!</p>
+<div class="row">
+  <div class="col">
+    <section>
+      <div class="row">
+        <div class="col-md-9">
+          <a>Liste des demandes</a>
+        </div>
+      </div>
+    </section>
+    <section class="main">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>numéro demandes</th>
+            <th>nom client</th>
+            <th>Prenom client</th>
+            <th>Email client</th>
+            <th>date de la demande</th>
+            <th>réponse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let demande of demandes">
+            <td>{{demande.iddemandeOuverture}}</td>
+            <td>{{demande.clientpotentiel.nom}}</td>
+            <td>{{demande.clientpotentiel.prenom}}</td>
+            <td>{{demande.clientpotentiel.email}}</td>
+            <td>{{demande.dateDemande}}</td>
+            <td>{{demande.valide}}</td>
+            <button type="button" class="btn btn-success"
+              (click)="validationDemande(demande.iddemandeOuverture)">Valider</button>
+            <button type="button" class="btn btn-danger">Refuser</button>
+            <!-- suppression de la demande ou juste refus-->
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</div>
