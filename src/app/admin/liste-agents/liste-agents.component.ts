@@ -1,4 +1,6 @@
+import { Agent } from './../../models/agent';
 import { Component, OnInit } from '@angular/core';
+import { AgentService } from 'src/app/services/agent.service';
 
 @Component({
   selector: 'app-liste-agents',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./liste-agents.component.css']
 })
 export class ListeAgentsComponent implements OnInit {
-
-  constructor() { }
+  agents: Agent[];
+  constructor(private agentService: AgentService) { }
 
   ngOnInit() {
+    this.getAllAgents();
+  }
+
+  getAllAgents() {
+    this.agents = this.agentService.findAll();
   }
 
 }

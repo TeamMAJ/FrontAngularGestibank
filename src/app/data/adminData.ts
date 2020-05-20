@@ -13,4 +13,4 @@ export const ADMIN: Admin = {
         pseudo: null,
         mdp: 'mdp'
     }
-}
+};

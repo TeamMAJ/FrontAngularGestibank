@@ -1,6 +1,6 @@
 import { DemandeOuverture } from './../models/demande-ouverture';
 
-export const USERS: DemandeOuverture[] = [
+export const DEMANDES: DemandeOuverture[] = [
   {
     iddemandeOuverture: 1,
     dateDemande: new Date('2017-08-28'),

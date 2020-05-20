@@ -1,4 +1,3 @@
-import { AdminComponent } from './../admin/admin/admin.component';
 import { ClientPotentiel } from './client-potentiel';
 import { Admin } from './admin';
 

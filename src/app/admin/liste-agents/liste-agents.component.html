@@ -1,1 +1,30 @@
-<p>liste-agents works!</p>
+<div class="row">
+  <div class="col">
+    <section>
+      <div class="row">
+        <div class="col-md-9">
+          <a>Liste des agents</a>
+        </div>
+        <div class="col-md-3">
+          <button type="button" class="btn btn-primary btn-lg">Ajouter un agent</button>
+        </div>
+      </div>
+    </section>
+    <section class="main">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Matricule</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let agent of agents">
+            <td>{{agent.matricule}}</td>
+            <td>{{agent.utilisateur.nom}}</td>
+            <td>{{agent.utilisateur.prenom}}</td>
+            <td>{{agent.utilisateur.email}}</td>
+            <button type="button" class="btn btn-success">Editer</button>
+            <button type="button" class="btn btn-danger">Supprimer</button>
