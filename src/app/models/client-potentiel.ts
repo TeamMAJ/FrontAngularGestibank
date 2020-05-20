@@ -1,5 +1,5 @@
 export class ClientPotentiel {
-  idclientPotentiel: number;
+  idclientpotentiel: number;
   nom: string;
   prenom: string;
   email: string;

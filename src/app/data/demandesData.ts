@@ -3,7 +3,7 @@ import { DemandeOuverture } from './../models/demande-ouverture';
 export const USERS: DemandeOuverture[] = [
   {
     iddemandeOuverture: 1,
-    dateDemande: '2020-01-01',
+    dateDemande: new Date('2017-08-28'),
     valide: 1,
     clientpotentiel: {
         idclientpotentiel: 1,
@@ -32,7 +32,7 @@ export const USERS: DemandeOuverture[] = [
 },
 {
     iddemandeOuverture: 2,
-    dateDemande: '2020-01-01',
+    dateDemande: new Date('2017-08-28'),
     valide: 1,
     clientpotentiel: {
         idclientpotentiel: 2,
