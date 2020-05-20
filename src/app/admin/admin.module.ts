@@ -5,7 +5,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ListeDemandesComponent } from './liste-demandes/liste-demandes.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ListeAgentsComponent } from './liste-agents/liste-agents.component';
-import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const adminRoutes: Routes = [
   {
@@ -27,7 +27,6 @@ const adminRoutes: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    Validators,
     RouterModule.forChild(adminRoutes),
 
   ]

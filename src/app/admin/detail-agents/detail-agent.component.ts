@@ -1,8 +1,10 @@
+import { Utilisateur } from './../../models/utilisateur';
 import { AgentService } from 'src/app/services/agent.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Agent } from 'src/app/models/agent';
+import { Admin } from 'src/app/models/admin';
 
 @Component({
   selector: 'app-detail-agent',
@@ -12,6 +14,8 @@ import { Agent } from 'src/app/models/agent';
 export class DetailAgentComponent implements OnInit {
   agentForm: FormGroup;
   agent: Agent = null;
+  utilisateur: Utilisateur;
+  admin: Admin;
   constructor(private router: Router,
               private agentService: AgentService) { }
 
@@ -33,15 +37,24 @@ export class DetailAgentComponent implements OnInit {
     });
   }
 
-  /*
+
   onSubmit() {
     if (this.agentForm.valid) {
       if (this.agent == null) {
       this.agent = new Agent(
         null,
         this.agentForm.controls['matricule'].value,
-        // utilisateur
-        // admin
+        this.utilisateur = new Utilisateur(
+        null,
+        this.agentForm.controls['nom'].value,
+        this.agentForm.controls['prenom'].value,
+        this.agentForm.controls['email'].value,
+        this.agentForm.controls['adresse'].value,
+        this.agentForm.controls['telephone'].value,
+        this.agentForm.controls['pseudo'].value,
+        this.agentForm.controls['mdp'].value,
+        ),
+        this.admin,
       );
       this.agentService.saveAgent(this.agent);
     } else {
@@ -49,9 +62,8 @@ export class DetailAgentComponent implements OnInit {
     }
   }
     this.agentForm.reset();
-    this.router.navigate(['/liste-agent']);
+    this.router.navigate(['/admin/liste-agents']);
 }
 
-*/
 
 }

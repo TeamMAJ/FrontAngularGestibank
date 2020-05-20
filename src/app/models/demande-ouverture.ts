@@ -5,7 +5,7 @@ export class DemandeOuverture {
   iddemandeOuverture: number;
   dateDemande: Date;
   valide: number;
-  clientpotentiel: ClientPotentiel = new ClientPotentiel();
-  admin: Admin = new Admin();
+  clientpotentiel: ClientPotentiel;
+  admin: Admin;
 }
 

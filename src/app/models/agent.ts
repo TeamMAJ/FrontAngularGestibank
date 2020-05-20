@@ -4,8 +4,8 @@ import { Admin } from './admin';
 export class Agent {
   idagent: number;
   matricule: string;
-  utilisateur: Utilisateur = new Utilisateur();
-  admin: Admin = new Admin();
+  utilisateur: Utilisateur;
+  admin: Admin;
 
   constructor(idagent: number, matricule: string, utilisateur: Utilisateur, admin: Admin) {
     this.idagent = idagent;
