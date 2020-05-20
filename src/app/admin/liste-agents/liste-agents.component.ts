@@ -1,17 +1,16 @@
-import { Router } from '@angular/router';
-import { Agent } from './../../models/agent';
-import { Component, OnInit } from '@angular/core';
-import { AgentService } from 'src/app/services/agent.service';
+import { Router } from "@angular/router";
+import { Agent } from "./../../models/agent";
+import { Component, OnInit } from "@angular/core";
+import { AgentService } from "src/app/services/agent.service";
 
 @Component({
-  selector: 'app-liste-agents',
-  templateUrl: './liste-agents.component.html',
-  styleUrls: ['./liste-agents.component.css']
+  selector: "app-liste-agents",
+  templateUrl: "./liste-agents.component.html",
+  styleUrls: ["./liste-agents.component.css"],
 })
 export class ListeAgentsComponent implements OnInit {
   agents: Agent[];
-  constructor(private agentService: AgentService,
-              private router: Router) { }
+  constructor(private agentService: AgentService, private router: Router) {}
 
   ngOnInit() {
     this.getAllAgents();
@@ -22,7 +21,16 @@ export class ListeAgentsComponent implements OnInit {
   }
 
   redirectNewAgentPage() {
-    this.router.navigate(['/admin/detail-agent']);
+    this.router.navigate(["/admin/detail-agent"]);
   }
 
+  deleteAgent(agent: Agent) {
+    this.agentService.deleteAgent(agent);
+  }
+
+  editAgent(agent: Agent) {
+    if (agent) {
+      this.router.navigate(["/admin/agent/edit", agent.idagent]);
+    }
+  }
 }

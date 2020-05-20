@@ -26,5 +26,6 @@
             <td>{{agent.utilisateur.nom}}</td>
             <td>{{agent.utilisateur.prenom}}</td>
             <td>{{agent.utilisateur.email}}</td>
-            <button type="button" class="btn btn-success">Editer</button>
-            <button type="button" class="btn btn-danger">Supprimer</button>
+            <button type="button" class="btn btn-success" (click)="editAgent(agent)">Editer</button>
+            <button type="button" class="btn btn-danger" (click)="deleteAgent(agent)">Supprimer</button>
+

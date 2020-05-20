@@ -15,6 +15,7 @@ const adminRoutes: Routes = [
       { path: 'detail-agent', component: DetailAgentComponent },
       { path: 'liste-demandes', component: ListeDemandesComponent },
       { path: 'liste-agents', component: ListeAgentsComponent },
+      { path: 'agent/edit/:id', component: DetailAgentComponent},
       { path: '',   redirectTo: 'admin', pathMatch: 'full' }
     ],
   }
